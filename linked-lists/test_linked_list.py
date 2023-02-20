@@ -126,3 +126,19 @@ def test_list_length_calculation(empty_list):
     for cont in range(1, 10):
         empty_list.append_head(data=cont)
         assert len(empty_list) == cont
+
+
+def test_find_kth_element_of_a_list():
+    """
+    Test case to find the kth element of a list.
+    """
+    new_list = LinkedList()
+    # populate list with data from 1 to 10
+    for i in range(1, 11):
+        new_list.append(data=i)
+
+    assert new_list.find_kth_element(k=0) == 10
+    assert new_list.find_kth_element(k=1) == 9
+    assert new_list.find_kth_element(k=2) == 8
+    assert new_list.find_kth_element(k=9) == 1
+    assert new_list.find_kth_element(k=10) is None

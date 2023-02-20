@@ -120,6 +120,32 @@ class LinkedList:
                 print(current)
             current = current.next
 
+    def find_kth_element(self, k: int):
+        """
+        Challenge: find the kth element of a singly linked list.
+        :param k: kth element.
+        :return: None, if the kth element doesn't exist or if k is larger than list length.
+                 Return Node.data respectively of a kth element.
+        """
+        if not self.head:
+            return None
+
+        # faster pointer walks k steps first
+        faster = self.head
+        for _ in range(k):
+            faster = faster.next
+            if faster is None:
+                # in this point, k is larger than list length
+                # so return None.
+                return None
+
+        # Increment both pointers until fast reaches the end
+        slower = self.head
+        while faster.next is not None:
+            faster = faster.next
+            slower = slower.next
+        return slower.data
+
     def get_all_data(self) -> List:
         """
         Return a Python List with all the data in the LinkedList.

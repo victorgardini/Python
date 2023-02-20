@@ -142,3 +142,20 @@ def test_find_kth_element_of_a_list():
     assert new_list.find_kth_element(k=2) == 8
     assert new_list.find_kth_element(k=9) == 1
     assert new_list.find_kth_element(k=10) is None
+
+
+def test_is_palindrome():
+    palindromes = ['ana', 'radar', 'renner', 'bob', 'otto', 'madam']
+    not_palindromes = ['anaa', 'radara', 'bobb', 'ottoo', 'madama']
+
+    for palindrome in palindromes:
+        new_list = LinkedList()
+        for letter in palindrome:
+            new_list.append(data=letter)
+        assert new_list.is_palindrome() is True
+
+    for palindrome in not_palindromes:
+        new_list = LinkedList()
+        for letter in palindrome:
+            new_list.append(data=letter)
+        assert new_list.is_palindrome() is False

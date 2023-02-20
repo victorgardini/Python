@@ -146,6 +146,32 @@ class LinkedList:
             slower = slower.next
         return slower.data
 
+    def is_palindrome(self) -> bool:
+        """
+        Challenge: check if a linked list is a palindrome.
+        :return: True if is a palindrome, False otherwise.
+        """
+        if not self.head or not self.head.next:
+            return False
+
+        # reverse the second half of the list inserting at the head
+        # and compare with the first half
+        reversed_list = LinkedList()
+        current = self.head
+        while current:
+            reversed_list.append_head(current.data)
+            current = current.next
+
+        # compare the first half with the second half
+        current = self.head
+        reversed_current = reversed_list.head
+        while current and reversed_current:
+            if current.data != reversed_current.data:
+                return False
+            current = current.next
+            reversed_current = reversed_current.next
+        return True
+
     def get_all_data(self) -> List:
         """
         Return a Python List with all the data in the LinkedList.

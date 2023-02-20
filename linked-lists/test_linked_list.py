@@ -9,7 +9,7 @@ def empty_list():
 
 
 @pytest.fixture
-def non_empty_list():
+def non_empty_ordered_list():
     non_empty_list = LinkedList()
     for i in range(1, 4):
         non_empty_list.append(data=i)
@@ -63,35 +63,35 @@ def test_find_empty_list_nodes(empty_list):
     assert empty_list.find(3) is None
 
 
-def test_find_non_empty_list_nodes(non_empty_list):
-    searched_node = non_empty_list.find(1)
+def test_find_non_empty_list_nodes(non_empty_ordered_list):
+    searched_node = non_empty_ordered_list.find(1)
     assert searched_node is not None
     assert searched_node.data == 1
 
-    searched_node = non_empty_list.find(2)
+    searched_node = non_empty_ordered_list.find(2)
     assert searched_node is not None
     assert searched_node.data == 2
 
-    searched_node = non_empty_list.find(3)
+    searched_node = non_empty_ordered_list.find(3)
     assert searched_node is not None
     assert searched_node.data == 3
 
 
-def test_delete_entire_list(non_empty_list):
-    assert len(non_empty_list) != 0  # assert list is not empty
+def test_delete_entire_list(non_empty_ordered_list):
+    assert len(non_empty_ordered_list) != 0  # assert list is not empty
 
     # starting removing nodes from list
-    assert non_empty_list.delete(1) is True
-    assert non_empty_list.find(1) is None
+    assert non_empty_ordered_list.delete(1) is True
+    assert non_empty_ordered_list.find(1) is None
 
-    assert non_empty_list.delete(2) is True
-    assert non_empty_list.find(2) is None
+    assert non_empty_ordered_list.delete(2) is True
+    assert non_empty_ordered_list.find(2) is None
 
-    assert non_empty_list.delete(3) is True
-    assert non_empty_list.find(3) is None
+    assert non_empty_ordered_list.delete(3) is True
+    assert non_empty_ordered_list.find(3) is None
 
-    assert len(non_empty_list) == 0
-    assert non_empty_list.head is None
+    assert len(non_empty_ordered_list) == 0
+    assert non_empty_ordered_list.head is None
 
 
 def test_delete_empty_list_node(empty_list):
@@ -99,22 +99,22 @@ def test_delete_empty_list_node(empty_list):
     assert empty_list.delete(data=1) is None
 
 
-def test_delete_only_head_element_of_linked_list(non_empty_list):
-    assert non_empty_list.delete(data=1) is True
-    assert non_empty_list.find(data=1) is None
+def test_delete_only_head_element_of_linked_list(non_empty_ordered_list):
+    assert non_empty_ordered_list.delete(data=1) is True
+    assert non_empty_ordered_list.find(data=1) is None
 
 
-def test_delete_only_tail_element_of_linked_list(non_empty_list):
-    assert non_empty_list.delete(data=3) is True
-    assert non_empty_list.find(data=3) is None
+def test_delete_only_tail_element_of_linked_list(non_empty_ordered_list):
+    assert non_empty_ordered_list.delete(data=3) is True
+    assert non_empty_ordered_list.find(data=3) is None
 
 
 def test_get_empty_list_all_data(empty_list):
     assert len(empty_list.get_all_data()) == 0
 
 
-def test_get_non_empty_list_all_data(non_empty_list):
-    non_empty_list_data = non_empty_list.get_all_data()
+def test_get_non_empty_list_all_data(non_empty_ordered_list):
+    non_empty_list_data = non_empty_ordered_list.get_all_data()
     assert len(non_empty_list_data) == 3
     for list_data, test_data in zip(non_empty_list_data, [1, 2, 3, 4]):
         assert list_data == test_data

@@ -163,9 +163,10 @@ class LinkedList:
             current = current.next
 
         # compare the first half with the second half
+        max_iterations = len(self) // 2
         current = self.head
         reversed_current = reversed_list.head
-        while current and reversed_current:
+        for _ in range(max_iterations):
             if current.data != reversed_current.data:
                 return False
             current = current.next

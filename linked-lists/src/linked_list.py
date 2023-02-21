@@ -211,3 +211,43 @@ class LinkedList:
                 current = current.next
 
         return True
+
+    def partition_around(self, value) -> None:
+
+        """
+        Challenge: partition a linked list around a value x,
+        such that all nodes less than x come before all
+        nodes greater than or equal to x.
+        :param value: value to be used as partition.
+        :return: None
+        """
+        if not self.head:
+            return
+
+        # create two linked lists
+        # one for values less than value
+        # another for values greater than value
+        less_than_list = LinkedList()
+        greater_than_list = LinkedList()
+
+        current = self.head
+        while current:
+            if current.data < value:
+                less_than_list.append(current.data)
+            elif current.data == value:
+                greater_than_list.append_head(current.data)
+            else:
+                greater_than_list.append(current.data)
+            current = current.next
+
+        # merge two lists
+        if less_than_list.head:
+            current = less_than_list.head
+            while current.next:
+                current = current.next
+            current.next = greater_than_list.head
+            self.head = less_than_list.head
+            del less_than_list
+        else:
+            self.head = greater_than_list.head
+            del greater_than_list

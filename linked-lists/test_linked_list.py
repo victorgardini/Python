@@ -174,3 +174,31 @@ def test_remove_duplicates():
     new_list.remove_duplicates()
     # assert list has no more duplicates nodes
     assert len(new_list) == len(set(new_list.get_all_data()))
+
+
+def test_partition_list_values_greater_than():
+    # test empty list
+    new_list = LinkedList()
+    new_list.partition_around(value=10)
+    assert new_list.get_all_data() == []
+
+    # One element list, left list empty
+    new_list = LinkedList()
+    new_list.append(data=5)
+    new_list.partition_around(value=0)
+    assert new_list.get_all_data() == [5]
+
+    # Right list is empty
+    new_list = LinkedList()
+    new_list.append(data=5)
+    new_list.partition_around(value=10)
+    assert new_list.get_all_data() == [5]
+
+    # Test some general case
+    new_list = LinkedList()
+    for data in [4, 3, 13, 8, 10, 1, 14, 10, 12]:
+        new_list.append(data=data)
+    new_list.partition_around(value=10)
+
+    # values greater than 5 should be on the right side of the list
+    assert new_list.get_all_data() == [4, 3, 8, 1, 10, 10, 13, 14, 12]

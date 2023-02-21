@@ -191,3 +191,23 @@ class LinkedList:
             count += 1
             current = current.next
         return count
+
+    def remove_duplicates(self) -> Optional[bool]:
+        """
+        Challenge: remove all duplicates nodes from a linked list.
+        """
+        if not self.head:
+            return
+
+        current = self.head
+        seen_data = {current.data}
+        while current.next is not None:
+            if current.next.data in seen_data:
+                duplicated_node = current.next
+                current.next = duplicated_node.next
+                del duplicated_node
+            else:
+                seen_data.add(current.next.data)
+                current = current.next
+
+        return True

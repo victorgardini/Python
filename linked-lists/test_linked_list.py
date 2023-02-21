@@ -159,3 +159,18 @@ def test_is_palindrome():
         for letter in palindrome:
             new_list.append(data=letter)
         assert new_list.is_palindrome() is False
+
+
+def test_remove_duplicates():
+    new_list = LinkedList()
+
+    for _ in range(10):
+        for i in range(1, 11):
+            new_list.append(data=i)
+
+    # assert list has duplicates
+    assert len(new_list) != len(set(new_list.get_all_data()))
+    # call remove duplicates method
+    new_list.remove_duplicates()
+    # assert list has no more duplicates nodes
+    assert len(new_list) == len(set(new_list.get_all_data()))

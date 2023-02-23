@@ -1,11 +1,11 @@
 """
-Challenge: Compress a string such that 'AAABCCDDDDE' becomes 'A3BC2D4E'.
-Only compress the string if it saves space.
+Challenge: Compress a data such that 'AAABCCDDDDE' becomes 'A3BC2D4E'.
+Only compress the data if it saves space.
 
-Solution: Iterate through the string and keep a count of the current character.
+Solution: Iterate through the data and keep a count of the current character.
 If the next character is different than the current character, append the current
-and its count to the compressed string. If the compressed string is
-longer than the original string, return the original string.
+and its count to the compressed data. If the compressed data is
+longer than the original data, return the original data.
 
 Some things to note:
 https://stackoverflow.com/questions/4435169/how-do-i-append-one-string-to-another-in-python/4435752#4435752
@@ -20,8 +20,8 @@ class CompressedString:
     @staticmethod
     def compress_string(string: str) -> Tuple[str, bool]:
         """
-        Compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'.
-        Only compress the string if it saves space.
+        Compress a data such that 'AAABCCDDDD' becomes 'A3BC2D4'.
+        Only compress the data if it saves space.
         """
         if not string:
             return "", False
@@ -53,7 +53,7 @@ class CompressedString:
     @staticmethod
     def uncompress_string(string: str) -> str:
         """
-        Uncompress a string such that 'A3BC2D4' becomes 'AAABCCDDDD'.
+        Uncompress a data such that 'A3BC2D4' becomes 'AAABCCDDDD'.
         """
         uncompressed_string = ""
         count = 0
@@ -76,7 +76,7 @@ class CompressedString:
         return self.string
 
     def __repr__(self) -> str:
-        return f'CompressedString(string="{self.string}", is_compressed={self._is_compressed})'
+        return f'CompressedString(data="{self.string}", is_compressed={self._is_compressed})'
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 from typing import Optional, List
-from .utils import raise_data_is_none
+from utils import raise_data_is_none
 
 
 class Node:

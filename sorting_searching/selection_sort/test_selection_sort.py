@@ -1,4 +1,4 @@
-from selection_sort import selection_sort
+from selection_sort import selection_sort, selection_sort_recursive
 
 import pytest
 
@@ -12,3 +12,4 @@ import pytest
 )
 def test_selection_sort(data):
     assert selection_sort(data) == sorted(data)
+    assert selection_sort_recursive(data) == sorted(data)

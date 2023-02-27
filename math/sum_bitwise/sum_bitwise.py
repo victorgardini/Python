@@ -10,7 +10,13 @@ Carry bit can be obtained by performing AND (&) of two bits.
 
 
 def add(a: int, b: int) -> int:
-    if b == 0:
-        return a
-    else:
-        return add(a ^ b, (a & b) << 1)
+    keep = (a & b) << 1
+    res = a ^ b
+
+    # If bitwise & is 0, then there
+    # is not going to be any carry.
+    # Hence result of XOR is addition.
+    if keep == 0:
+        return res
+
+    return add(keep, res)

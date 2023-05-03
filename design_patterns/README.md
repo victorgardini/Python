@@ -29,3 +29,12 @@ Design Patterns são soluções para problemas comuns que encontramos no desenvo
 
 
 ## Design Patterns Estruturais
+
+* [**Adapter**](/design_patterns/structural/adapter): converte a interface de uma classe em outra interface que o cliente espera encontrar;
+* [**Bridge**](/design_patterns/structural/bridge): separa uma abstração da sua implementação, de forma que ambas possam variar independentemente;
+* [**Composite**](/design_patterns/structural/composite): compõe objetos em estruturas de árvore para representar hierarquias parte-todo;
+* [**Decorator**](/design_patterns/structural/decorator): adiciona responsabilidades a um objeto dinamicamente;
+* [**Facade**](/design_patterns/structural/facade): fornece uma interface unificada para um conjunto de interfaces em um subsistema;
+* [**Proxy**](/design_patterns/structural/proxy): fornece um objeto substituto ou um marcador de localização para outro objeto para controlar o acesso a ele.
+
+## Design Patterns Comportamentais

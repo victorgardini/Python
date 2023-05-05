@@ -38,3 +38,21 @@ Design Patterns são soluções para problemas comuns que encontramos no desenvo
 * [**Proxy**](/design_patterns/structural/proxy): fornece um objeto substituto ou um marcador de localização para outro objeto para controlar o acesso a ele.
 
 ## Design Patterns Comportamentais
+
+* [**Chain of Responsibility**](/design_patterns/behavioral/chain_of_responsibility): evita o acoplamento do remetente de uma solicitação ao seu receptor, ao dar a mais de um objeto a oportunidade de tratar a solicitação;
+* [**Command**](/design_patterns/behavioral/command): encapsula uma solicitação em um objeto, permitindo que você parametrize clientes com diferentes solicitações, enfileire ou registre solicitações e implemente recursos de cancelamento de operações;
+* [**Iterator**](/design_patterns/behavioral/iterator): fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor sua representação subjacente;
+* [**Mediator**](/design_patterns/behavioral/mediator): permite que você reduza as dependências caóticas entre objetos. O padrão restringe as comunicações diretas entre os objetos e os força a colaborar apenas por meio de um objeto mediador;
+* [**Memento**](/design_patterns/behavioral/memento): permite que você salve e restaure o estado anterior de um objeto sem revelar os detalhes de sua implementação;
+* [**Observer**](/design_patterns/behavioral/observer): permite que objetos publiquem alterações de estado para outros objetos que os estejam observando;
+* [**State**](/design_patterns/behavioral/state): permite que um objeto altere seu comportamento quando seu estado interno muda;
+* [**Strategy**](/design_patterns/behavioral/strategy): permite que você defina uma família de algoritmos, coloque-os em classes separadas, faça seus objetos intercambiáveis;
+* [**Template Method**](/design_patterns/behavioral/template_method): define o esqueleto de um algoritmo em uma operação, adiando alguns passos para subclasses. O padrão permite que as subclasses redefinam certos passos de um algoritmo sem alterar a estrutura do próprio algoritmo;
+* [**Visitor**](/design_patterns/behavioral/visitor): permite que você separe algoritmos dos objetos nos quais eles operam.
+
+
+## References
+
+* [Design Patterns](https://refactoring.guru/design-patterns)
+* [Faif Design Pattern GithubRepo](https://github.com/faif/python-patterns)
+* [Dunossauro - Design Patterns](https://github.com/dunossauro/live-de-python/issues/52)
